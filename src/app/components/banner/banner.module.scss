@@ -1,0 +1,21 @@
+.layers {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    perspective: 1000px;
+    .layers__container {
+        position: relative;
+        background-image: url('../../../images/layerOne.jpg');
+        background-repeat: no-repeat;
+        background-position: cover center;
+        transform-style: preserve-3d;
+        height: 100vh;
+        transform: rotateX(30deg);
+    }
+}
+
+.layers__item {}
