@@ -1,0 +1,14 @@
+.item {
+    display: flex;
+    padding: 25px 50px;
+    max-width: 60%;
+    .item__text {
+        padding-left: 25px;
+        .title {
+            margin-bottom: 15px;
+        }
+        .text {
+        }   
+    }
+    
+}

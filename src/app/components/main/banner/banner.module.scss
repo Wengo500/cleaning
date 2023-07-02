@@ -1,0 +1,56 @@
+.layer {
+    position: relative;
+    min-height: 100vh;
+    perspective: 900px;
+    overflow: hidden;
+    scroll-snap-align: center;
+
+    .mainLayer {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        inset: -5vw;
+        background-image: url('../../../../images/banner/bannerBg.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        transform-style: preserve-3d;
+        will-change: transform;
+        transition: transform 1s cubic-bezier(.05, .5, 0, 1);
+
+        .table {
+            position: absolute;
+            bottom: 15vh;
+            left: 38vw;
+            transform: translateZ(90px) scale(1);
+        }
+        .banner__text {
+            position: absolute;
+            text-align: center;
+            top: 30vh;
+            transform: translateZ(280px) scale(.8);
+            color: white;
+
+            .title {
+            }
+        }
+        .Tamara {
+            position: absolute;
+            bottom: 8vh;
+            left: 62vw;
+            pointer-events: none;
+            transform: translateZ(100px);
+        }
+        .armchair {
+            position: absolute;
+            bottom: 8vh;
+            right: 6vw;
+            pointer-events: none;
+            transform: translateZ(100px) scale(.7);
+        }
+        .leaves {
+            pointer-events: none;
+            transform: translateZ(500px) scale(.45);
+        }
+    }
+}

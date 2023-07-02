@@ -1,11 +1,11 @@
 import Main  from '@/app/components/main/Main'
-import Header from '@/app/components/header/Header'
+import Footer from '@/app/components/footer/Footer'
 
 export default function Home() {
   return (
     <>
-      {/* <Header></Header> */}
       <Main></Main>
+      <Footer/>
     </>
   )
 }
