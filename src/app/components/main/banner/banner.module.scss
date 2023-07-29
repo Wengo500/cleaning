@@ -8,49 +8,79 @@
     .mainLayer {
         position: absolute;
         display: flex;
-        align-items: center;
         justify-content: center;
-        inset: -5vw;
+        inset: -3vw;
         background-image: url('../../../../images/banner/bannerBg.jpg');
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
         transform-style: preserve-3d;
         will-change: transform;
         transition: transform 1s cubic-bezier(.05, .5, 0, 1);
 
-        .table {
+        .mainPerson {
             position: absolute;
             bottom: 15vh;
-            left: 38vw;
-            transform: translateZ(90px) scale(1);
+            transform: translateZ(150px) scale(1);
         }
         .banner__text {
             position: absolute;
-            text-align: center;
-            top: 30vh;
-            transform: translateZ(280px) scale(.8);
+            top: 15vh;
+            left: 5vw;
+            transform: translateZ(30px) scale(.8);
             color: white;
+            text-shadow: 0 0 15px rgb(10, 81, 25);
+
 
             .title {
+                font-size: 5vw;
+                color: rgb(255, 255, 255);
+            }
+            .subtitle {
+                font-size: 2vw;
+            }
+            .batton {
+                padding: 10px 20px;
+                margin-top: 20px;
+                font-size: 1.5vw;
+                color: white;
+                border: white solid;
+                background: transparent;
+                transition: 0.5s;
+
+                &:hover {
+                    border-radius: 5px;
+                    font-size: 1.8vw;
+                    cursor: pointer;
+                }
             }
         }
-        .Tamara {
+        .girl {
             position: absolute;
-            bottom: 8vh;
-            left: 62vw;
+            top: 25vh;
+            left: 37vw;
             pointer-events: none;
-            transform: translateZ(100px);
+            transform: translateZ(80px);
         }
-        .armchair {
+        .toiletBrush {
             position: absolute;
-            bottom: 8vh;
-            right: 6vw;
+            top: 0;
+            left: 37vw;
             pointer-events: none;
-            transform: translateZ(100px) scale(.7);
+            transform: translateZ(50px) scale(.7);
         }
-        .leaves {
+        .leafRake {
+            position: absolute;
+            top: 10vh;
+            right: 27vw;
             pointer-events: none;
-            transform: translateZ(500px) scale(.45);
+            transform: translateZ(80px) scale(.7);
+        }
+        .smog {
+            position: absolute;
+            bottom: 0;
+            pointer-events: none;
+            transform: translateZ(400px) scale(.5);
         }
     }
 }
