@@ -1,0 +1,88 @@
+.card {
+    position: relative;
+    // margin: 80px 0;
+    max-width: 1150px;
+    .card_img {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: -1;
+    }
+    .card_text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        min-height: 500px;
+        background-image: url('../../../../../images/dilogBubble.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        color: black;
+
+        .card_title {
+            font-size: 200%;
+            padding-left: 100px;
+            margin-bottom: 10px;
+        }
+        .card_p {
+            padding-left: 100px;
+            font-size: 130%;
+            max-width: 62%;
+           
+        }
+    }
+}
+.reflectionCard {
+    .card_img {
+        top: -40px;
+        right: -150px;
+        left: auto;
+    }
+    .card_text {
+        transform: scale(-1, 1);
+
+        .card_title, .card_p {
+            transform: scale(-1, 1);
+            padding-left: 0;
+            padding-right: 130px;
+
+        }
+    }
+   
+}
+
+@media (max-width: 2200px) {
+    .card {
+
+        .card_img {
+          
+        }
+        .card_text {
+
+            .card_title {
+            }
+            .card_p {
+
+            }
+        }
+    }
+    .reflectionCard {
+        .card_img {
+        }
+        .card_text {
+
+            .card_title, .card_p {
+            }
+        }
+       
+    }
+}
+
+@media (max-width: 990px) {
+
+}
+
+@media (max-width: 770px) {
+
+}

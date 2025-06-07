@@ -1,0 +1,54 @@
+{
+  "cssImports": {
+    "/Users/andrewognev/Documents/web/cleaning/src/app/layout.tsx": [
+      "/Users/andrewognev/Documents/web/cleaning/node_modules/next/font/google/target.css?{\"path\":\"src/app/fonts.ts\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"500\",\"700\"],\"variable\":\"--font-inter\"}],\"variableName\":\"inter\"}",
+      "/Users/andrewognev/Documents/web/cleaning/node_modules/next/font/google/target.css?{\"path\":\"src/app/fonts.ts\",\"import\":\"Raleway\",\"arguments\":[{\"weight\":\"500\",\"subsets\":[\"latin\"],\"variable\":\"--font-raleway\",\"display\":\"swap\"}],\"variableName\":\"raleway\"}",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/globals.scss"
+    ],
+    "/Users/andrewognev/Documents/web/cleaning/src/app/page.tsx": [
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/main.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/services/services.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/node_modules/next/font/google/target.css?{\"path\":\"src/app/components/main/services/serviceCard/ServiceCard.tsx\",\"import\":\"Comic_Neue\",\"arguments\":[{\"weight\":\"700\",\"subsets\":[\"latin\"]}],\"variableName\":\"font\"}",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/services/serviceCard/serviceCard.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/price/price.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/price/billSmith/billSmith.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/orderForm.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/additionalServices/additionalServices.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/additionalServices/additionalServiceItem/additionalServiceItem.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/cleaningTypeButton/cleaningTypeButton.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/coreInputs/coreInputs.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/coreInputs/customSelect.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/costCounter/costCounter.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/costCounter/selectedList/selectedList.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/orderFormSuccessModal/orderFormSuccessModal.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/subscriptionModal/subscriptionModal.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/banner/banner.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/footer/footer.module.scss"
+    ]
+  },
+  "cssModules": {
+    "/Users/andrewognev/Documents/web/cleaning/src/app/page": [
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/main.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/footer/footer.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/node_modules/next/font/google/target.css?{\"path\":\"src/app/fonts.ts\",\"import\":\"Inter\",\"arguments\":[{\"subsets\":[\"latin\"],\"weight\":[\"500\",\"700\"],\"variable\":\"--font-inter\"}],\"variableName\":\"inter\"}",
+      "/Users/andrewognev/Documents/web/cleaning/node_modules/next/font/google/target.css?{\"path\":\"src/app/fonts.ts\",\"import\":\"Raleway\",\"arguments\":[{\"weight\":\"500\",\"subsets\":[\"latin\"],\"variable\":\"--font-raleway\",\"display\":\"swap\"}],\"variableName\":\"raleway\"}",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/globals.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/services/serviceCard/serviceCard.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/node_modules/next/font/google/target.css?{\"path\":\"src/app/components/main/services/serviceCard/ServiceCard.tsx\",\"import\":\"Comic_Neue\",\"arguments\":[{\"weight\":\"700\",\"subsets\":[\"latin\"]}],\"variableName\":\"font\"}",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/services/services.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/price/billSmith/billSmith.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/price/price.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/additionalServices/additionalServiceItem/additionalServiceItem.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/additionalServices/additionalServices.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/cleaningTypeButton/cleaningTypeButton.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/coreInputs/customSelect.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/coreInputs/coreInputs.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/costCounter/selectedList/selectedList.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/costCounter/costCounter.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/orderFormSuccessModal/orderFormSuccessModal.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/subscriptionModal/subscriptionModal.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/orderForm/orderForm.module.scss",
+      "/Users/andrewognev/Documents/web/cleaning/src/app/components/main/banner/banner.module.scss"
+    ]
+  }
+}

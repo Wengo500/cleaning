@@ -1,12 +1,75 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --main-color: #0aded0;
+    
+    background: #000000;
+    * { 
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    ul {
+        list-style: none;
+    }
+    img {
+        pointer-events: none;
+    }
+    ::-webkit-scrollbar {
+        width: 0;
+    }
+    h1 {
+        font-family: var(--font-raleway);
+    }
+    h2 {
+        font-family: var(--font-raleway);
+        font-size: 4vw;
+        margin-top: 4vh;
+        padding: 20px;
+        color: #fff;
+    }
+    input, button, a, select, textArea {
+        background: transparent;
+        border: none;
+        color: var(--main-color);
+        text-decoration: none;
+        &:focus, &:active {
+            background: transparent;
+            border: none;
+            outline: none;
+          }
+    }
+    input[type="radio"] {
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+    input:-webkit-autofill {
+        transition: all 5000s ease-in-out;
+    }
+    input[type="date"] {
+        position: relative;
+    }
+    input[type="date"]::-webkit-calendar-picker-indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+            color: transparent;
+            background: transparent;
+        }
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-clear-button {z-index: 1;}
+
+}
+
+html {
     scroll-snap-type: y mandatory;
+    font-family: var(--font-inter);
 }
-main {
+
+section {
     scroll-snap-align: start;
+    height: 100%;
 }
-::-webkit-scrollbar {
-    width: 0;
-  }

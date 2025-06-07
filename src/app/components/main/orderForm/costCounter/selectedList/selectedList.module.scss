@@ -1,0 +1,23 @@
+.wrap {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: -570px;
+    top: 0;
+    width: 550px;
+    padding: 20px;
+    font-size: 20px;
+    color: var(--main-color);
+
+    .typeOfCleaning {
+        padding: 5px;
+    }
+    .propertySize {
+        padding: 5px;
+    }
+    .additions {
+        .additions__item {
+            padding: 5px;
+        }
+    }
+}

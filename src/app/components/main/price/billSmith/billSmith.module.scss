@@ -1,0 +1,19 @@
+.wrapper {
+    position: relative;
+    display: flex;
+    .billSmith {
+    }
+    .text {
+        position: absolute;
+        left: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+        height: 300px;
+        padding-left: 50px;
+        font-size: 30px;
+        color: rgb(0, 0, 0);
+        background: url('../../../../../images/dilogBubble.svg') no-repeat  center  / contain;
+    }
+}

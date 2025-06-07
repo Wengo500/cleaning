@@ -1,0 +1,107 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 35vw;
+    top: 35vh;
+    width: 155px;
+    height: 155px;
+    border: solid 1px var(--main-color);
+    border-radius: 50%;
+    z-index: 1;
+
+    .number {
+        position: absolute;
+        color: var(--main-color);
+        font-size: 35px;
+    }
+    .label {
+        position: absolute;
+        flex-wrap: nowrap;
+        min-width: 150px;
+        top: -30px;
+        left: 202px;
+        color: var(--main-color);
+        font-size: 20px;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 100%;
+            height: 2px;
+            background: var(--main-color);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 49px;
+            left: -65px;
+            width: 50%;
+            height: 2px;
+            background: var(--main-color);
+            transform: rotate(320deg);
+        }
+    }
+    .costCounter {
+        position: relative;
+        width: 155px;
+        height: 155px;
+        border: solid 10px var(--main-color);
+        border-radius: 50%;
+        border-top: 10px solid transparent;
+        border-left: 10px solid transparent;
+        animation: animatedArkRotation 13s linear infinite;
+        &:after {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: -15px;
+            width: 150px;
+            height: 150px;
+            border: solid 7px  var(--main-color);
+            border-radius: 50%;
+            border-bottom: 5px solid transparent;
+            border-right: 5px solid transparent;
+            animation: animatedArkRotation1 5s linear infinite;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: -23px;
+            top: -23px;
+            width: 150px;
+            height: 150px;
+            border: solid 15px var(--main-color);
+            border-radius: 50%;
+            border-top: 15px solid transparent;
+            border-right: 15px solid transparent;
+            animation: animatedArkRotation2 7s linear infinite;
+        }
+    }
+}
+    @keyframes animatedArkRotation {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes animatedArkRotation1 {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(-360deg);
+        }
+    }
+    @keyframes animatedArkRotation2 {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }

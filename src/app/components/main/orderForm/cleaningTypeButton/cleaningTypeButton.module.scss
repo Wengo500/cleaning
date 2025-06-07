@@ -1,0 +1,32 @@
+
+.button_wrap {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #7a9e9c;
+    transition: .3s;
+
+    &:hover {
+        color:aqua;
+        transform: scale(1.1);
+    }
+    &:has(.radio:checked) {
+        transform: scale(1.1);
+        color:aqua;
+    }
+    .button_name {
+        position: relative;
+        display: block;
+        white-space: nowrap; 
+        font-size: 30px;
+        padding: 40px;
+    }
+    .svg {
+        position: absolute;
+        top: 20px;
+    }
+}
+

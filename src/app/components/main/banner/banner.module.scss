@@ -1,28 +1,24 @@
 .layer {
     position: relative;
-    min-height: 100vh;
+    min-height: 105vh;
     perspective: 900px;
     overflow: hidden;
-    scroll-snap-align: center;
-
+    scroll-behavior: smooth;
+    
     .mainLayer {
         position: absolute;
         display: flex;
         justify-content: center;
-        inset: -3vw;
+        inset: -5vw;
         background-image: url('../../../../images/banner/bannerBg.jpg');
         background-size: contain;
         background-repeat: no-repeat;
-        background-position: center;
+        background-position: cover;
         transform-style: preserve-3d;
-        will-change: transform;
-        transition: transform 1s cubic-bezier(.05, .5, 0, 1);
+        // will-change: transform;
+        transition: transform 5s cubic-bezier(.05, .5, 0, 1);
 
-        .mainPerson {
-            position: absolute;
-            bottom: 15vh;
-            transform: translateZ(150px) scale(1);
-        }
+      
         .banner__text {
             position: absolute;
             top: 15vh;
@@ -30,24 +26,22 @@
             transform: translateZ(30px) scale(.8);
             color: white;
             text-shadow: 0 0 15px rgb(10, 81, 25);
-
-
             .title {
                 font-size: 5vw;
-                color: rgb(255, 255, 255);
             }
             .subtitle {
                 font-size: 2vw;
             }
-            .batton {
-                padding: 10px 20px;
-                margin-top: 20px;
+            .button {
+                display: inline-block;
+                padding: 15px 50px;
+                margin-top: 30px;
+                margin-left: 20px;
                 font-size: 1.5vw;
                 color: white;
                 border: white solid;
                 background: transparent;
                 transition: 0.5s;
-
                 &:hover {
                     border-radius: 5px;
                     font-size: 1.8vw;
@@ -55,31 +49,32 @@
                 }
             }
         }
+        .mainPerson {
+            position: absolute;
+            bottom: 26vh;
+            transform: translateZ(150px) scale(1);
+        }
         .girl {
             position: absolute;
-            top: 25vh;
-            left: 37vw;
-            pointer-events: none;
+            top: 32vh;
+            left: 41vw;
             transform: translateZ(80px);
         }
         .toiletBrush {
             position: absolute;
-            top: 0;
-            left: 37vw;
-            pointer-events: none;
+            top: 18vh;
+            left: 43vw;
             transform: translateZ(50px) scale(.7);
         }
         .leafRake {
             position: absolute;
-            top: 10vh;
-            right: 27vw;
-            pointer-events: none;
+            top: 22vh;
+            right: 35vw;
             transform: translateZ(80px) scale(.7);
         }
         .smog {
             position: absolute;
             bottom: 0;
-            pointer-events: none;
             transform: translateZ(400px) scale(.5);
         }
     }

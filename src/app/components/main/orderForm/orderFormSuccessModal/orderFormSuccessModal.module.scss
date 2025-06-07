@@ -1,0 +1,93 @@
+.popupWrap {
+    position: absolute;
+    top: -30vh;
+    display: flex;
+    justify-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: 20;
+    .confettiWrap {
+        position: absolute;
+        left: 0;
+        top: -110vh;
+        z-index: 9;
+        display: none;
+    }
+    .modal {
+        display: none;
+        position: absolute;
+        background: white;
+        color: var(--main-color);
+        font-size: 40px;
+        padding: 40px;
+        max-height: 70vh;
+        max-width: 60vw;
+        top: -100vh;
+        border-radius: 5px;
+        box-shadow: inset 0px 0px 20px 5px rgba(63, 63, 63, 0.194), 0px 0px 30px 2px rgba(49, 48, 48, 0.282);
+        z-index: 10;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+
+        ::-webkit-scrollbar {
+            width: 5px;
+          }
+          
+          /* Track */
+          ::-webkit-scrollbar-track {
+            border-radius: 50px;
+            background: #f1f1f1;
+          }
+          
+          /* Handle */
+          ::-webkit-scrollbar-thumb {
+            border-radius: 50px;
+            background: #6fbfaf;
+          }
+          
+          /* Handle on hover */
+          ::-webkit-scrollbar-thumb:hover {
+            background: #5da193;
+          }
+
+        .dataWrap {
+            min-height: 70%;
+            font-size: 20px;
+            overflow-y: scroll;
+            margin: 10px;
+            .itemHead {
+                font-size: 25px;
+            }
+            .UserData {
+                list-style-position: inside;
+                column-count: 2;
+                padding: 10px;
+            }
+            .cleaningType {
+                display: block;
+                padding: 10px 0;
+            }
+            .subscription {
+                display: block;
+                margin-bottom: 10px;
+            }
+           .comment {
+            margin-top: 10px;
+           }
+           .button {
+                display: block;
+                font-size: 30px;
+                max-width: 55%;
+                text-align: center;
+                font-family: var(--font-inter);
+                font-weight: 700;
+                border: solid var(--main-color) 2px;
+                padding: 10px 0;
+                background: #0aded01a;
+                margin: 30px auto;
+                cursor: pointer;
+        }
+        }
+    }
+}

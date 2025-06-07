@@ -1,0 +1,84 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	z-index: 22;
+	visibility: hidden;
+	opacity: 0;
+	transition: .2s;
+	min-width: 100vw;
+	min-height: 120vh;
+	background: #00000097;
+	overflow: hidden;
+
+	.modal {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 700px;
+		height: 500px;
+		background: url('../../../../../images/orderForm/modal.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		backdrop-filter: blur(5px);
+		padding: 30px;
+		transition: .5s;
+		transform: scale(1, 0);
+
+		.title {
+			text-align: center;
+			color: white;
+			font-size: 25px;
+			margin: 20px 30px;
+		}
+		.options {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 10px;
+			grid-auto-rows: minmax(10px, auto);
+			margin-bottom: 40px;
+			.option {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 250px;
+				height: 80px;
+				background: #24dace;
+				font-size: 20px;
+				font-weight: 900;
+				cursor: pointer;
+				transition: .3s;
+				
+				&:hover {
+					transform: scale(1.03);
+					color: rgb(255, 255, 255);
+				}
+				&:has(.radio:checked) {
+					transform: scale(1.03);
+					color: rgb(255, 255, 255);
+			}
+			}
+		}
+		.buttonsWrap {
+			display: flex;
+			.confirm, .close {
+			margin: 0 20px;
+			padding: 10px 20px;
+			text-align: center;
+			border: 2px solid black;
+			font-size: 30px;
+			background: #02f4d8;
+			cursor: pointer;
+			transition: .3s;
+
+			&:hover {
+				transform: scale(1.1);
+				color: rgb(255, 255, 255);
+			}
+		}
+		}
+		
+	}
+}

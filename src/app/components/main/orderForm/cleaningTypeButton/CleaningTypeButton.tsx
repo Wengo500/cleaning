@@ -1,0 +1,104 @@
+'use client'
+import { DEEP_CLEANING, REGULAR_CLEANING } from '@/utils/constants/constants'
+import { Control, Controller, FieldValues } from 'react-hook-form'
+import style from './cleaningTypeButton.module.scss'
+
+
+interface CleaningTypeButtonProps {
+  cleaningType: {
+    cost: number
+    type: typeof DEEP_CLEANING | typeof REGULAR_CLEANING
+  } 
+  control: Control<FieldValues>
+  errors: any
+  refForm: any
+  formScrollCoordinatesFnc: any
+  // errors: FieldError | Merge<FieldError, FieldErrorsImpl<FieldValues>> | undefined
+};
+
+const CleaningTypeButton:React.FC <CleaningTypeButtonProps> = ({
+  cleaningType,
+  control,
+  errors,
+  refForm,
+  formScrollCoordinatesFnc
+}): JSX.Element => {
+
+  const valid: boolean = errors?.type?.message ? false : true
+  const {type, cost} = cleaningType
+  return  <label  
+            className={style.button_wrap}>
+            <Controller
+              control={control}
+              name="cleaningType"
+              render={({field: {onChange}}) => 
+                <input 
+                  className={style.radio}
+                  type='radio'
+                  name='cleaningType'
+                  onChange={()=>{
+                    formScrollCoordinatesFnc(refForm)
+                    onChange({type, cost})
+                  }}
+                />}
+            />
+
+            <span className={style.button_name} >
+              {type}
+            </span>
+            
+            <svg className={style.svg} width="303" height="82" viewBox="0 0 303 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 0H98L103 4H3V0Z" fill="#04C2B2"/>
+              <path d="M3.5 0.5H97.8246L101.575 3.5H3.5V0.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M4 3H69L76 9H4V3Z" fill="#04C2B2"/>
+              <path d="M4.5 3.5H68.815L74.6484 8.5H4.5V3.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M38.5 3H64L68 6H42.5L38.5 3Z" fill="black"/>
+              <path d="M3 0L3 27.1765L7 33L7 0L3 0Z" fill="#04C2B2"/>
+              <path d="M3.5 0.5L3.5 27.0213L6.5 31.3889L6.5 0.5L3.5 0.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M0 23L0 28.3333L0 33.6667L7 40L7 16.5L0 23Z" fill="#04C2B2"/>
+              <path d="M0.5 28.3333L0.5 33.4448L6.5 38.8733L6.5 17.6466L0.5 23.218L0.5 28.3333Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M300 0H205L200 4H300V0Z" fill="#04C2B2"/>
+              <path d="M299.5 0.5H205.175L201.425 3.5H299.5V0.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M299 3H234L227 9H299V3Z" fill="#04C2B2"/>
+              <path d="M298.5 3.5H234.185L228.352 8.5H298.5V3.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M300 0V27.1765L296 33V0L300 0Z" fill="#04C2B2"/>
+              <path d="M299.5 0.5V27.0213L296.5 31.3889V0.5L299.5 0.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M303 22.6383V28.0851V33.5319L296 40V16L303 22.6383Z" fill="#04C2B2"/>
+              <path d="M302.5 28.0851V33.3132L296.5 38.8572V17.1632L302.5 22.8532V28.0851Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M36 4H118.738L125.492 9H176.246L183 4H287.5" stroke="#04C2B2"/>
+              <path d="M3 82H98L103 78H3V82Z" fill="#04C2B2"/>
+              <path d="M3.5 81.5H97.8246L101.575 78.5H3.5V81.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M4 79H69L76 73H4V79Z" fill="#04C2B2"/>
+              <path d="M4.5 78.5H68.815L74.6484 73.5H4.5V78.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M3 82L3 54.8235L7 49L7 82H3Z" fill="#04C2B2"/>
+              <path d="M3.5 81.5L3.5 54.9787L6.5 50.6111L6.5 81.5H3.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M0 59.3617L0 53.9149L0 48.4681L7 42L7 66L0 59.3617Z" fill="#04C2B2"/>
+              <path d="M0.5 53.9149L0.5 48.6868L6.5 43.1428L6.5 64.8368L0.5 59.1468L0.5 53.9149Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M300 82H205L200 78H300V82Z" fill="#04C2B2"/>
+              <path d="M299.5 81.5H205.175L201.425 78.5H299.5V81.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M299 79H234L227 73H299V79Z" fill="#04C2B2"/>
+              <path d="M298.5 78.5H234.185L228.352 73.5H298.5V78.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M300 82V54.8235L296 49V82H300Z" fill="#04C2B2"/>
+              <path d="M299.5 81.5V54.9787L296.5 50.6111V81.5H299.5Z" stroke="#033888" strokeOpacity="0.54"/>
+              <path d="M303 59.3617V53.9149V48.4681L296 42V66L303 59.3617Z" fill="#04C2B2"/>
+              <path d="M302.5 53.9149V48.6868L296.5 43.1428V64.8368L302.5 59.1468V53.9149Z" stroke="#033888" strokeOpacity="0.54"/>
+              <rect x="3.25" y="30.25" width="4.5" height="20.5" stroke="#04C2B2" strokeWidth="0.5"/>
+              <rect x="295.25" y="30.25" width="4.5" height="20.5" stroke="#04C2B2" strokeWidth="0.5"/>
+              <path d="M35 79H60.5L64.5 76H39L35 79Z" fill="black"/>
+              <path d="M266 3H240.068L236 6H261.932L266 3Z" fill="black"/>
+              <path d="M269 79H243.932L240 76H265.068L269 79Z" fill="black"/>
+              <path d="M36 78H118.744L125.498 73H176.256L183.011 78H291" stroke="#04C2B2"/>
+              <rect x="7" y="10" width="288" height="62" fill="url(#paint0_linear_37_48)" fillOpacity="0.21"/>
+              <defs>
+                <linearGradient id="paint0_linear_37_48" x1="151" y1="10" x2="151" y2="72" gradientUnits="userSpaceOnUse">
+                  <stop offset="0.1264583" stopColor={valid? "#0ADECC" : 'red'} stopOpacity="0.92"/>
+                  <stop offset="0.163542" stopColor={valid? "#0ADECC" : 'red'} stopOpacity="0.83"/>
+                  <stop offset="1" stopColor={valid? "#0ADECC" : 'red'} stopOpacity="0.2"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </label>
+  
+}
+
+export default CleaningTypeButton

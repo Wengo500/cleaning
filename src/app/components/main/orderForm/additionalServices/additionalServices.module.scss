@@ -1,0 +1,26 @@
+.additionals {
+    position: relative;
+    left: -80px;
+    top: 70px;   
+    color: #64f6f1;
+    transform: rotate(25deg);
+
+    .itemWrap {
+        position: absolute;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        transform-origin: 0% 0%;
+        width: 650px;
+       
+        &::before {
+            content: '';
+            position: absolute;
+            left: 150px;
+            top: 20px;
+            height: 1px;
+            width: 200px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.801) 100%, );
+        }
+    }
+}

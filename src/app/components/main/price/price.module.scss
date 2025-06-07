@@ -1,5 +1,65 @@
 .price {
-    width: 60%;
-    height: 400px;
-    background: gray;
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
+    background: #000;
+    perspective: 900px;
+    overflow: hidden;
+    .content__wrap{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        inset: -1vw;
+        background-image: url('../../../../images/price/priceBG.jpg');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform-style: preserve-3d;
+        color: white;
+        transition: transform 1s cubic-bezier(.05, .5, 0, 1);
+        transform: translateZ(-150px);
+
+        .tower {
+            position: absolute;
+            left: 22vw;
+            bottom: 38vh;
+            transform: translateZ(48px);
+        }
+
+        .light {
+            position: absolute;
+            bottom: 10vh;
+            left: 0;
+            transform-origin: right bottom;
+            max-height: 100vh !important;
+            min-height: 60vh !important;
+        }
+        .skyscrapers {
+            position: absolute;
+            bottom: 0;
+            transform: translateZ(50px);
+            z-index: -1;
+        }
+       
+        .price__text {
+            position: absolute;
+            padding: 20px 120px;
+            top: 20vh;
+            width: 60%;
+            height: 70%;
+            border: 8px solid #38988c;
+            box-shadow: inset 1px 1px 50px 5px #38988d41, 1px 1px 50px 5px #38988d41;
+            font-size: 120%;
+            .paragraph{
+                margin-top: 20px;
+            }
+        }
+        
+    }
+    .billSmithWrap {
+        position: absolute;
+        bottom: -250px;
+        left: 25vw;
+        opacity: 0;
+    }
 }

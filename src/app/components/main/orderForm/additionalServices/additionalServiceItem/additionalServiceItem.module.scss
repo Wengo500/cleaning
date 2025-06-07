@@ -1,0 +1,45 @@
+	.additionalItem {
+			padding: 10px 0;
+			width: 300px;
+			transition: 0.3s;
+			cursor: pointer;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-webkit-touch-callout: none;   
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+			-khtml-user-select: none;
+
+			.checkbox {
+					opacity: 0;
+			}
+			&:hover {
+					transform: scale(1.2) skew(10deg);
+					text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.515), 0 0 1em rgba(255, 255, 255, 0.617), 0 0 0.2em var(--main-color);
+			}
+			&:has(.checkbox:checked) {
+					transform: scale(1.2) skew(10deg);
+			}
+			.additionalItem_name {
+					width: 300px;
+					font-size: 14px;
+			}
+			.amountWrap {
+					display: inline-flex;
+					justify-content: start;
+					align-items: center;
+					position: absolute;
+					min-width: 100px;
+					height: 50%;
+					
+					.symbols {
+							font-size: 30px;
+							padding: 10px;
+							cursor: pointer;
+					}
+					.number {
+							font-size: 20px;
+					}
+			}
+	}

@@ -1,0 +1,42 @@
+.inputLine, .red {
+    display: block;
+    position: relative;
+    width: 200px;
+    height: 1px;
+    background: var(--main-color);
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 100%;
+        width: 40%;
+        height: 1px;
+        background: linear-gradient(90deg, var(--main-color) 52%, #32dfc215 100%);
+        transform-origin: left bottom;
+        transform: rotate(20deg);
+    } 
+}
+.notValid { 
+    background: red;
+    &::after {
+        background: linear-gradient(90deg, red 52%, #32dfc215 100%);
+    } 
+}
+
+.lineLength1 {
+    &::after {
+    width: 50%;
+    }
+}
+.lineLength2 {
+    &::after {
+    width: 60%;
+    }
+}
+
+.coreInput {
+    min-width: 200px;
+}
+.coreSelect {
+    min-width: 200px;
+}
