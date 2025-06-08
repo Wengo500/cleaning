@@ -3,28 +3,36 @@
 import { ALL_SERVICES } from '@/utils/constants/constants'
 import style from './additionalServices.module.scss'
 
-import { Control, FieldValues } from "react-hook-form"
+import { Control, FieldValues, UseFormSetValue, UseFormWatch } from "react-hook-form"
 import AdditionalServiceItem from './additionalServiceItem/AdditionalServiceItem'
+import { IAdditionalServices } from '@/utils/interfaces/interfaces'
 
+interface IAdditionalServicesProps {
+  control: Control<FieldValues>
+  setValue: UseFormSetValue<FieldValues>
+  watch: UseFormWatch<FieldValues>
+}
 
-const AdditionalServices:React.FC <{ control: Control<FieldValues> }> = 
-({ control }): JSX.Element => {
+const AdditionalServices: React.FC<IAdditionalServicesProps> = 
+({ control, setValue, watch }): JSX.Element => {
 
   let countDegree = 12
-  const {additionalServices} = ALL_SERVICES
+  const { additionalServices } = ALL_SERVICES
 
   return (
     <ul className={style.additionals}>
-      {additionalServices?.map((el: FieldValues, idx: number)=> {
+      {additionalServices?.map((service: IAdditionalServices, idx: number) => {
         return (
         <li
           key={idx}
           className={style.itemWrap}
-          style={{transform: `rotate(${countDegree-=6}deg)`}}
+          style={{transform: `rotate(${countDegree -= 6}deg)`}}
         >
           <AdditionalServiceItem 
             control={control} 
-            item={el} 
+            additionalService={service}
+            setValue={setValue}
+            watch={watch}
           />
         </li>
       )})}

@@ -42,7 +42,6 @@ const OrderFormSuccessModal:React.FC<IOrderFormSuccessModal> = ({formScrollCoord
         handleScroll('services', e)
         document.body.style.overflowY = 'scroll';
     }
-  console.log(getValues())
    return   <>
                 { IsActiveSuccessModal && 
                     <div

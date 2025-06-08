@@ -4,15 +4,13 @@ import { Control, Controller, FieldValues, UseFormRegister } from "react-hook-fo
 import Select from 'react-select'
 import style from './coreInputs.module.scss'
 import './customSelect.scss'
-interface CoreInputProps {
+import { IFormInputProps } from '@/utils/interfaces/interfaces'
+
+interface CoreInputProps extends IFormInputProps {
     inputType: string
     reflection: boolean
     lineLength: boolean | null
-    register: UseFormRegister<FieldValues>
-    // errors: FieldError | Merge<FieldError, FieldErrorsImpl<FieldValues>> | undefined
-    errors: any
-    control: Control<FieldValues>
-  }
+}
 
 const CoreInputs:React.FC <CoreInputProps> = ({
     register,

@@ -42,16 +42,12 @@ export const useElemSize = () => {
 export const modalCoordinates = () => {
   const elemRef = useRef<null | HTMLElement>(null)
   const [coordinates, setCoordinates] = useState<number>(0)
-  console.log('ref1',elemRef.current)  
 
   useEffect(()=>{
-  console.log('ref2',elemRef.current)  
     if ( elemRef.current !== null ) {
       setCoordinates(elemRef.current.scrollTop)
-      console.log('ref3',elemRef.current.scrollTop)  
     }
   },[elemRef.current])
-
 
   return {coordinates, elemRef}
 }

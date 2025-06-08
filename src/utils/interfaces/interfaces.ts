@@ -78,3 +78,36 @@ export interface IAllServices {
 	additionalServices: Array<IAdditionalServices>
 	propertySize:  Array<IPropertySize>
 }
+
+// Component prop interfaces
+export interface IFormInputProps {
+	register: any
+	errors: any
+	setValue: any
+	watch: any
+	control: any
+}
+
+export interface ICleaningTypeButtonProps {
+	cleaningType: {
+		type: typeof DEEP_CLEANING | typeof REGULAR_CLEANING
+		cost: number
+	}
+	onClick: () => void
+	currentType: string
+}
+
+export interface IAdditionalServiceItemProps {
+	additionalService: IAdditionalServices
+	control: any
+	setValue: any
+	watch: any
+}
+
+export interface ISubscriptionModalProps {
+	isOpen: boolean
+	onClose: () => void
+	subscriptions: Array<ISubscriptions>
+	control: any
+	setValue: any
+}

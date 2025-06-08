@@ -38,7 +38,7 @@ const OrderForm:React.FC = ({}): JSX.Element => {
   const [formScrollCoordinates, setFormScrollCoordinates] = useState<number>(0)
   const [subscriptionModalIsActive, setSubscriptionModalIsActive] = useState<boolean>(false)
 
-  const {register, handleSubmit, control, getValues, watch, formState: { errors } } = useForm<any>({
+  const {register, handleSubmit, control, getValues, watch, setValue, formState: { errors } } = useForm<any>({
     mode: 'onBlur',
     resolver: yupResolver(validationSchema),
     defaultValues: {}
@@ -49,14 +49,12 @@ const OrderForm:React.FC = ({}): JSX.Element => {
   const {cleaningType} = ALL_SERVICES
   const formScrollCoordinatesFnc = (ref: RefObject<HTMLElement>) => {
     if (ref.current) setFormScrollCoordinates(ref.current.scrollTop)
-    console.log(formScrollCoordinates)
   }
 
   const submit = (data: FieldValues)=> {
     formScrollCoordinatesFnc(refForm)
     document.body.style.overflow = 'hidden'
     setIsActiveSuccessModal(true)
-    console.log('data', data)
   }
   useEffect(()=>{
     if (isErrors > 0) setValid(false)
@@ -165,6 +163,8 @@ const OrderForm:React.FC = ({}): JSX.Element => {
           }
           <AdditionalServices 
             control={control}
+            setValue={setValue}
+            watch={watch}
           />
           <textarea 
             cols={22}

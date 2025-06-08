@@ -1,73 +1,110 @@
-import { useState } from 'react'
-import { Controller, FieldValues } from 'react-hook-form'
+import { useState, useCallback } from 'react'
+import { Controller } from 'react-hook-form'
 import style from './additionalServiceItem.module.scss'
+import { IAdditionalServiceItemProps } from '../../../../../utils/interfaces/interfaces'
 
-
-interface IAdditionalServiceItem {
-	control: any
-	item: any
-}
-
-let newArr: FieldValues[] = []
-
-const AdditionalServiceItem:React.FC <IAdditionalServiceItem> = 
-({control, item}): JSX.Element => {
+const AdditionalServiceItem: React.FC<IAdditionalServiceItemProps> = 
+({ control, additionalService, setValue, watch }): JSX.Element => {
 
 	const [num, setNum] = useState(0)
+	const currentServices = watch('additionalServices') || []
 
-	const handleClick = ( action: 'plus' | 'minus', amount: number) => {
-    if (action === 'plus') setNum((n: number) => num === 20 ? 0 : n+=1)
-    else setNum((n: number) => num === 0 ? 20 : n-=1)
-  }
+	const handleClick = useCallback((action: 'plus' | 'minus') => {
+		if (action === 'plus') {
+			setNum((n: number) => n >= 20 ? 20 : n + 1)
+		} else {
+			setNum((n: number) => n <= 0 ? 0 : n - 1)
+		}
+	}, [])
 
-	const addItem = (item: FieldValues) => {
-    const index = newArr.findIndex((el)=> el.serviceName === item.serviceName)
-		const include = newArr.some((el)=> el.serviceName === item.serviceName)
+	const updateServices = useCallback((newAmount: number) => {
+		const existingIndex = currentServices.findIndex(
+			(service: any) => service.serviceName === additionalService.serviceName
+		)
 
-		if (include && num > 0) {
-			newArr = newArr.filter((_, i ) => i !== index)
-			newArr = [...newArr, {...item, amount: num}]
-		} else if (include && num <= 0) {
-				newArr = newArr.filter((_, i ) => i !== index)
-    } else if (!include) {
-				num === 0 ? setNum(1) : num
-				newArr = [...newArr, {...item, amount: num === 0 ? 1 : num }]
+		let updatedServices = [...currentServices]
+
+		if (newAmount > 0) {
+			const serviceItem = {
+				serviceName: additionalService.serviceName,
+				cost: additionalService.cost,
+				amount: newAmount
+			}
+
+			if (existingIndex >= 0) {
+				updatedServices[existingIndex] = serviceItem
+			} else {
+				updatedServices.push(serviceItem)
+			}
+		} else {
+			if (existingIndex >= 0) {
+				updatedServices.splice(existingIndex, 1)
+			}
 		}
 
-    return newArr
-  }
+		setValue('additionalServices', updatedServices)
+		return updatedServices
+	}, [currentServices, additionalService, setValue])
 
 	return (
 		<label className={style.additionalItem}>
-			<span className={style.additionalItem_name} onClick={()=>setNum(num>0 ? 0 : num)}>
-				{item.serviceName}
+			<span 
+				className={style.additionalItem_name} 
+				onClick={() => {
+					const newNum = num > 0 ? 0 : 1
+					setNum(newNum)
+					updateServices(newNum)
+				}}
+				role="button"
+				tabIndex={0}
+				aria-label={`Select ${additionalService.serviceName}`}
+			>
+				{additionalService.serviceName}
 			</span>   
 			<div className={style.amountWrap}>
 				<span 
 					className={style.symbols} 
-					onClick={()=>handleClick('plus', item.amount)}
+					onClick={() => {
+						const newNum = num >= 20 ? 20 : num + 1
+						setNum(newNum)
+						updateServices(newNum)
+					}}
+					role="button"
+					tabIndex={0}
+					aria-label="Increase amount"
 				>+</span>
 
 				<span className={style.number}>{num}</span>
 
 				<span 
 					className={style.symbols} 
-					onClick={()=>handleClick('minus', item.amount)}
+					onClick={() => {
+						const newNum = num <= 0 ? 0 : num - 1
+						setNum(newNum)
+						updateServices(newNum)
+					}}
+					role="button"
+					tabIndex={0}
+					aria-label="Decrease amount"
 				>-</span>
 			</div>            
 			<Controller
 				control={control}
 				name="additionalServices"
-				render={({field: {onChange}}) => 
+				render={({ field: { value } }) => 
 					<input
-						checked={(num > 0 ? true : false)}
+						checked={num > 0}
 						className={style.checkbox}
-						type='checkbox'
-						value={item.serviceName} 
-						onChange={()=>{
-							onChange(addItem(item))
+						type="checkbox"
+						value={additionalService.serviceName}
+						onChange={() => {
+							const newNum = num > 0 ? 0 : 1
+							setNum(newNum)
+							updateServices(newNum)
 						}}
-					/>}
+						aria-label={`Toggle ${additionalService.serviceName}`}
+					/>
+				}
 			/>                         
 		</label>
 	);

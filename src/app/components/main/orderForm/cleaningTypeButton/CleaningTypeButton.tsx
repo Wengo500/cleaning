@@ -2,7 +2,7 @@
 import { DEEP_CLEANING, REGULAR_CLEANING } from '@/utils/constants/constants'
 import { Control, Controller, FieldValues } from 'react-hook-form'
 import style from './cleaningTypeButton.module.scss'
-
+import { RefObject } from 'react'
 
 interface CleaningTypeButtonProps {
   cleaningType: {
@@ -11,10 +11,9 @@ interface CleaningTypeButtonProps {
   } 
   control: Control<FieldValues>
   errors: any
-  refForm: any
-  formScrollCoordinatesFnc: any
-  // errors: FieldError | Merge<FieldError, FieldErrorsImpl<FieldValues>> | undefined
-};
+  refForm: RefObject<HTMLElement>
+  formScrollCoordinatesFnc: (ref: RefObject<HTMLElement>) => void
+}
 
 const CleaningTypeButton:React.FC <CleaningTypeButtonProps> = ({
   cleaningType,
