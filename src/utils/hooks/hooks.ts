@@ -1,16 +1,31 @@
 import { useEffect, useRef, useState } from 'react'
 
-export  const useMouseCoordinate = () => {
-  const [coordinate, setCoordinate] = useState({y:0, x:0})
+export const useMouseCoordinate = () => {
+  const [coordinate, setCoordinate] = useState({ y: 0, x: 0 })
 
   useEffect(() => {
-    document.addEventListener('mousemove', (event) => {
-      setCoordinate({x: event.x, y: event.y})
-    }) 
+    let animationFrameId: number
+
+    const handleMouseMove = (event: MouseEvent) => {
+      // Cancel the previous frame if it hasn't run yet to avoid stacking
+      // although strictly speaking simply requesting a new one is often enough if we only update state
+      // but standard pattern is usually just check if running or cancel previous.
+      // Simpler approach for React state: just schedule update in next frame.
+      cancelAnimationFrame(animationFrameId)
+      
+      animationFrameId = requestAnimationFrame(() => {
+        setCoordinate({ x: event.clientX, y: event.clientY })
+      })
+    }
+
+    document.addEventListener('mousemove', handleMouseMove)
+    
     return () => {
-      document.removeEventListener('mousemove', (event) => event)
+      document.removeEventListener('mousemove', handleMouseMove)
+      cancelAnimationFrame(animationFrameId)
     }
   }, [])
+  
   return coordinate
 }
 
